@@ -20,7 +20,7 @@ public class InitMyHibernate_Annotation {
                 hProperties.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
                 hProperties.put(Environment.URL, "jdbc:/mysql://localhost:3306/lab_myhibernate?userSSL=false");
                 hProperties.put(Environment.USER, "root");
-                hProperties.put(Environment.PASS, "kingschan");
+//                hProperties.put(Environment.PASS, "kingschan");
                 hProperties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
                 hProperties.put(Environment.SHOW_SQL, "true");
                 hProperties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
