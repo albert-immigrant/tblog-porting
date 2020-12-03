@@ -143,8 +143,8 @@ public class TopicSerivceImpl_2 implements TopicService2 {
 
         topicInDB.setUpdateAt(new Date(System.currentTimeMillis()));
         */
-
-        return topicRepository2.save(topicInDB);
+        Topic res=topicRepository2.save(topicInDB);
+        return res;
     }
 
     @Override
@@ -169,8 +169,9 @@ public class TopicSerivceImpl_2 implements TopicService2 {
 
 
         Topic topic_a = addTopic(vo);
-        topic_a.setCategory(category);
-        topic_a.setTopicauthor(user1);
+        topic_a.setCatid(category.getId().intValue());
+      //  topic_a.setCategory(category);
+      //  topic_a.setTopicauthor(user1);
         categoryRepository.save(category);
         /*使用 entitymanager*/
         /*
@@ -218,7 +219,8 @@ public class TopicSerivceImpl_2 implements TopicService2 {
 
     @Override
     public Topic findTopicById(String topicId) {
-        return null;
+        Optional<Topic> res =topicRepository2.findById(Integer.valueOf(topicId));
+        return (Topic) res.get();
     }
 
 
@@ -272,8 +274,8 @@ public class TopicSerivceImpl_2 implements TopicService2 {
         TopicVo vo = new TopicVo();
         vo.setTopicId(String.valueOf(topic.getId()));
         // vo.setAuthorName(topic.getAuthorName());
-        vo.setAuthorId(String.valueOf(topic.getTopicauthor().getId()));
-        vo.setCatId(String.valueOf(topic.getTopicauthor().getId()));
+       // vo.setAuthorId(String.valueOf(topic.getTopicauthor().getId()));
+    //    vo.setCatId(String.valueOf(topic.getTopicauthor().getId()));
         vo.setTitle(topic.getTitle());
         vo.setDesc(topic.getDesc());
         vo.setThumbURL(topic.getThumbURL());
@@ -290,6 +292,9 @@ public class TopicSerivceImpl_2 implements TopicService2 {
         */
         return vo;
     }
-
-
+    private int vsist=0;
+    @Override
+    public void increaseVisitCount(String topicID) {
+        ++vsist;
+    }
 }

@@ -1,19 +1,23 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../inc/header.jsp">
+<%--<jsp:include page="../inc/header.jsp">
     <jsp:param name="title" value="${article.topic.title}"/>
-</jsp:include>
+</jsp:include>--%>
+<jsp:include page="../inc/header.jsp"/>
+
 <div class='container main'>
     <div class='col-md-9' id="content">
         <ul class='breadcrumb'>
             <li><a href='${contextPath}/'><i class="glyphicon glyphicon-home"></i>主页</a><span class='divider'></span></li>
-            <li><a href='${contextPath}/?tab=${article.topic.catDir}'>${article.topic.catName}</a><span class='divider'></span></li>
+<%--            <li><a href='${contextPath}/?tab=${article.topic.catDir}'>${article.topic.catName}</a><span class='divider'></span></li>--%>
+            <li><a href='${contextPath}/?tab=${article.topic.category.catid}'>${article.topic.category.catName}</a><span class='divider'></span></li>
         </ul>
         <div class='panel'>
             <div class='header topic-header'>
                 <h1 class="topic-full-title">${article.topic.title}</h1>
                 <div class="changes">
-                    <span>${article.topic.friendlyTime}</span><span>&nbsp;&nbsp;作者：<a href="${contextPath}/pub/user/${article.topic.authorId}">${article.topic.authorName}</a></span><span>&nbsp;&nbsp; ${article.topic.visitCount}次浏览</span>
+<%--                    <span>${article.topic.friendlyTime}</span><span>&nbsp;&nbsp;作者：<a href="${contextPath}/pub/user/${article.topic.authorId}">${article.topic.authorName}</a></span><span>&nbsp;&nbsp; ${article.topic.visitCount}次浏览</span>--%>
+                    <span>article.topic.friendlyTime</span><span>&nbsp;&nbsp;作者：<a href="${contextPath}/pub/user/${article.topic.topicauthor.id}">${article.topic.topicauthor.username}</a></span><span>&nbsp;&nbsp; article.topic.topicauthor.visitCount 次浏览</span>
                     <span class="share pull-right">
                         <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
                         <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
@@ -23,19 +27,24 @@
             <div class='inner topic'>
                 <div class="topic_content">
                     <div class="editormd-preview-container">
-                        ${article.topic.contentHTML}
+<%--                        ${article.topic.contentHTML}--%>
+                        ${article.topic.content}
                     </div>
                 </div>
                 <div class="topic-tags">
                     <span>标签：</span>
+                    <%--
                     <c:if test="${not empty article.topic.tags}">
                         <c:forEach items="${article.topic.tags}" var="tag">
                             <a href="${contextPath}/tag/${tag}" class="tag">${tag}</a>
                         </c:forEach>
                     </c:if>
+                    --%>
                 </div>
                 <div class="topic-action-wrapper">
                     <div class="topic-actions">
+                        article.topic.likedUsers.contains(loginUser.id)
+                        <%--
                         <c:choose>
                             <c:when test="${article.topic.likedUsers.contains(loginUser.id)}">
                                 <a href="${contextPath}/like/remove/${article.topic.id}" class="action-link">
@@ -50,11 +59,13 @@
                                 </a>
                             </c:otherwise>
                         </c:choose>
+                        --%>
                         <a href="#reply" class="action-link">
                             <img src="${contextPath}/static/images/ico/comment-lg.svg" alt="">
                             <span>评论</span>
                         </a>
-                        <c:choose>
+                        article.topic.collectedUsers.contains(loginUser.id)
+                       <%-- <c:choose>
                             <c:when test="${article.topic.collectedUsers.contains(loginUser.id)}">
                                 <a id="collectLink" href="${contextPath}/collect/remove/${article.topic.id}" class="action-link" title="取消收藏">
                                     <img src="${contextPath}/static/images/ico/collected.svg" alt="">
@@ -65,7 +76,7 @@
                                     <img src="${contextPath}/static/images/ico/collect-lg.svg" alt="">
                                 </a>
                             </c:otherwise>
-                        </c:choose>
+                        </c:choose>--%>
                         <a href="javascript:;" class="action-link">
                             <img src="${contextPath}/static/images/ico/share-lg.svg" alt="">
                             <span>分享</span>
@@ -74,19 +85,36 @@
                 </div>
             </div>
         </div>
+        <c:forEach items="${replyList}" var="listMyItems">
+         <h1>  {listMyItems.replyid}</h1>
+
+        </c:forEach>
         <c:if test="${not empty article.replyList}">
             <div class="panel" id="comment">
                 <div class="header">
-                    <span class="col_fade">${article.topic.replyCount} 回复</span>
+
+<%--                    <span class="col_fade">${article.topic.replyCount} 回复</span>--%>
+                    <span class="col_fade">{article.topic.replyCount} 回复</span>
                 </div>
-                <c:forEach items="${article.replyList}" var="reply" varStatus="status">
-                    <div class="cell reply_area reply_item editormd-preview-container" reply_id="${reply.id}" reply_to_id="" id="${reply.id}">
+<%--                <c:forEach items="${article.replyList}" var="reply" varStatus="status">--%>
+                <c:forEach items="${replyList}" var="reply" varStatus="status">
+
+                   <H1> ${reply}</H1>
+
+
+
+                    <%@page import="com.tangzq.vo.ArticleVo" %>
+                  <% ArticleVo pp= (ArticleVo)pageContext.getRequest().getAttribute("article"); %>
+<%--                    <div class="cell reply_area reply_item editormd-preview-container" reply_id="${reply.id}" reply_to_id="" id="${reply.id}">--%>
+<%--                    <div class="cell reply_area reply_item editormd-preview-container" reply_id="${reply.replyid}" reply_to_id="" id="${reply.replyid}">--%>
+                    <div class="cell reply_area reply_item editormd-preview-container" reply_id="{reply.replyid}" reply_to_id="" id="{reply.replyid}">
                         <div class="author_content">
                             <a href="${contextPath}/pub/user/${reply.authorInfo.authorId}" class="user_avatar">
-                                <img src="${contextPath}${reply.authorInfo.authorAvatar}" title="${reply.authorInfo.authorName}"></a>
+                                <img src="${contextPath}${reply.authorInfo.authorAvatar}" title="${reply.authorInfo.username}"></a>
                             <div class="user_info">
-                                <a class="dark reply_author" href="${contextPath}/pub/user/${reply.authorInfo.authorId}">${reply.authorInfo.authorName}</a>
-                                <a class="reply_time" href="#${reply.id}">${status.index+1}楼•${reply.friendlyTime}</a>
+                                <a class="dark reply_author" href="${contextPath}/pub/user/${reply.authorInfo.authorId}">${reply.authorInfo.username}</a>
+<%--                                <a class="reply_time" href="#${reply.replyid}">${status.index+1}楼•${reply.friendlyTime}</a>--%>
+                                <a class="reply_time" href="# {reply.replyid}"> {status.index+1}楼• {reply.friendlyTime}</a>
                             </div>
                             <div class="user_action">
                               <span>
@@ -98,8 +126,8 @@
                                 <span></span>
                                 <c:if test="${not empty loginUser}">
                                     <c:if test="${loginUser.id==reply.authorInfo.authorId}">
-                                        <a href="javascript:;" class="edit-reply" reply-id="${reply.id}" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>
-                                        <a href="${contextPath}/article/${article.topic.id}/reply/${reply.id}/del/" title="删除"><i class="glyphicon glyphicon-remove-circle"></i></a>
+                                        <a href="javascript:;" class="edit-reply" reply-id="{reply.replyid}" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>
+                                        <a href="${contextPath}/article/${article.topic.id}/reply/{reply.replyid}/del/" title="删除"><i class="glyphicon glyphicon-remove-circle"></i></a>
                                     </c:if>
                                 </c:if>
                             </div>
@@ -131,7 +159,9 @@
                         <input type="hidden" name="topicId" value="${article.topic.id}">
                         <input type="hidden" name="authorId" value="${loginUser.id}">
                         <input type="hidden" name="authorName" value="${loginUser.username}">
-                        <input type="hidden" name="authorAvatar" value="${loginUser.avatarURL}">
+<%--                        <input type="hidden" name="authorAvatar" value="${loginUser.avatarURL}">--%>
+                        <input type="hidden" name="authorAvatar" value="${loginUser.id}">
+
                         <input type="submit" class="btn btn-primary" value="回复" id="submit">
                     </fieldset>
                 </form>

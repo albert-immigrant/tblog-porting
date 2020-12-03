@@ -37,7 +37,7 @@ public interface TopicRepository2 extends CrudRepository<Topic, String> {
 
     @Override
     Optional<Topic> findById(String s);
-
+    @Query(value = "select t from Topic t where t.id=?1 ")
     Optional<Topic> findById(int s);
 
 

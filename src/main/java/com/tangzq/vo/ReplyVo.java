@@ -12,7 +12,8 @@ import lombok.ToString;
 @Setter
 @ToString
 public class ReplyVo {
-
+//    private String replyid;
+    private String id;
     private String contentMD;
     private String contentHTML;
     private String topicId;

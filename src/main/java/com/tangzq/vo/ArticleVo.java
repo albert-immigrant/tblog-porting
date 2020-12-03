@@ -15,6 +15,10 @@ import java.util.List;
 @Setter
 @ToString
 public class ArticleVo {
-    private Topic topic6;
+    private Topic topic;
     private List<Reply> replyList;
+
+    public void setTopic(Topic topic) {
+        this.topic=topic;
+    }
 }

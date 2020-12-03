@@ -1,6 +1,7 @@
 package com.tangzq.repository;
 
 import com.tangzq.model.Reply;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
@@ -18,5 +19,6 @@ public interface ReplyRepository extends PagingAndSortingRepository<Reply,String
      * @param topicId
      * @return
      */
+    @Query(value = "select re from Reply re where re.id=?1")
     List<Reply> findAllByTopicid(String topicId);
 }

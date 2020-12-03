@@ -81,6 +81,7 @@ public class ReplyServiceImpl implements ReplyService {
 
     @Override
     public List<Reply> findReplyByTopicId(String topicId) {
+
         return replyRepository.findAllByTopicid(topicId);
     }
 

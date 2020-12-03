@@ -16,13 +16,9 @@ public class Tag {
     private Timestamp created;
 //    private Collection<TagOfPost> tagOfPostsById;
 
-    public int getId() {
-        return id;
-    }
+    public int getId() {return id;}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id){ this.id = id;}
 
     public String getName() {
         return name;
@@ -55,9 +51,9 @@ public class Tag {
         return Objects.hash(id, name, created);
     }
 
- //   public Collection<TagOfPost> getTagOfPostsById() {
- //       return tagOfPostsById;
- //   }
+    //   public Collection<TagOfPost> getTagOfPostsById() {
+    //       return tagOfPostsById;
+    //   }
 
 //    public void setTagOfPostsById(Collection<TagOfPost> tagOfPostsById) {
 //        this.tagOfPostsById = tagOfPostsById;

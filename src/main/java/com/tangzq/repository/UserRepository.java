@@ -17,7 +17,7 @@ public interface UserRepository extends CrudRepository<User_me, String> {
     /**
      * 用户名查找用户
      *
-     * @param username
+     * @param userName
      * @return
      */
  @Query( "SELECT u FROM User_me u WHERE u.username=?1")

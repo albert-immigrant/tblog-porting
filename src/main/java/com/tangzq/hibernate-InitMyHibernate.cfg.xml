@@ -17,7 +17,7 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
         <mapping class="com.tangzq.model.User_me"/>
-        <mapping class="com.tangzq.model.Topic6"/>
+        <mapping class="com.tangzq.model.Topic"/>
         <mapping class="com.tangzq.model.Reply"/>
         <mapping class="com.tangzq.model.Tag"/>
         <mapping class="com.tangzq.model.Catagories_1"/>
