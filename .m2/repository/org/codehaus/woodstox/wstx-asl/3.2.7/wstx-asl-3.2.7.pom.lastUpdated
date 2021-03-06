@@ -1,5 +1,0 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Sat Feb 27 11:11:58 CST 2021
-https\://repo.maven.apache.org/maven2/.lastUpdated=1614395518178
-@default-spring-milestones-http\://repo.spring.io/milestone/.lastUpdated=1614395517876
-http\://repo.spring.io/milestone/.error=Could not transfer artifact org.codehaus.woodstox\:wstx-asl\:pom\:3.2.7 from/to spring-milestones (http\://repo.spring.io/milestone)\: Access denied to http\://repo.spring.io/milestone/org/codehaus/woodstox/wstx-asl/3.2.7/wstx-asl-3.2.7.pom. Error code 403, Forbidden
