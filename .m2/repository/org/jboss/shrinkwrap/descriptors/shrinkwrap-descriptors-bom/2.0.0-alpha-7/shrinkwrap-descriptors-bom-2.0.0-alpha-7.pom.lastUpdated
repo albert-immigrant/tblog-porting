@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Feb 27 11:12:12 CST 2021
+https\://repo.maven.apache.org/maven2/.lastUpdated=1614395532876
+@default-spring-milestones-http\://repo.spring.io/milestone/.lastUpdated=1614395532461
+http\://repo.spring.io/milestone/.error=Could not transfer artifact org.jboss.shrinkwrap.descriptors\:shrinkwrap-descriptors-bom\:pom\:2.0.0-alpha-7 from/to spring-milestones (http\://repo.spring.io/milestone)\: Access denied to http\://repo.spring.io/milestone/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-7/shrinkwrap-descriptors-bom-2.0.0-alpha-7.pom. Error code 403, Forbidden
