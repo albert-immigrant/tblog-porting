@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Feb 27 11:11:29 CST 2021
+https\://repo.maven.apache.org/maven2/.lastUpdated=1614395489008
+@default-spring-milestones-http\://repo.spring.io/milestone/.lastUpdated=1614395488667
+http\://repo.spring.io/milestone/.error=Could not transfer artifact org.springframework\:spring-test\:pom\:4.2.6.RELEASE from/to spring-milestones (http\://repo.spring.io/milestone)\: Access denied to http\://repo.spring.io/milestone/org/springframework/spring-test/4.2.6.RELEASE/spring-test-4.2.6.RELEASE.pom. Error code 403, Forbidden

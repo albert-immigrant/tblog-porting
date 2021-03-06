@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Feb 27 10:25:30 CST 2021
+tiles-template-3.0.3.jar>central=
+tiles-template-3.0.3-sources.jar>central=
+tiles-template-3.0.3.pom>central=

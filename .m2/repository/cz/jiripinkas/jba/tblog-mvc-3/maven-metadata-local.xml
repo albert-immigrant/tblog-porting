@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>cz.jiripinkas.jba</groupId>
+  <artifactId>tblog-mvc-3</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20210227022529</lastUpdated>
+  </versioning>
+</metadata>

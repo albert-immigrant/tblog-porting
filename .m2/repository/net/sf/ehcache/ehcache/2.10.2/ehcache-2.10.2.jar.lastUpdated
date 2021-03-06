@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Feb 27 11:12:29 CST 2021
+https\://repo.maven.apache.org/maven2/.lastUpdated=1614395549357
+@default-spring-milestones-http\://repo.spring.io/milestone/.lastUpdated=1614395538084
+http\://repo.spring.io/milestone/.error=Could not transfer artifact net.sf.ehcache\:ehcache\:jar\:2.10.2 from/to spring-milestones (http\://repo.spring.io/milestone)\: Access denied to http\://repo.spring.io/milestone/net/sf/ehcache/ehcache/2.10.2/ehcache-2.10.2.jar. Error code 403, Forbidden
