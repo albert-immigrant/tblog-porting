@@ -48,7 +48,7 @@ import java.util.List;
 
 
 /**
- * 首页控制器
+ * 首頁控制器
  * @author tangzhiqiang
  */
 
@@ -57,11 +57,11 @@ import java.util.List;
 @RequestMapping(value = "/")
 public class HomeController {
     @Autowired
-private UserRepository userRepository;
+    private UserRepository userRepository;
     public static final String VCODE_SESSION_KEY="validateCode";
 
 //    @Value("${appname}")
- //   private String configAppName;
+    //   private String configAppName;
 
     @Autowired
     private UserService userService;
@@ -72,7 +72,7 @@ private UserRepository userRepository;
     @Autowired
     private static SessionFactory sessionFactory;
 
-//
+    //
 //
 //    @Autowired
 //    private TopicService topicService;
@@ -84,8 +84,8 @@ private UserRepository userRepository;
 
 
     /**
-     * 跳转到首页
-     * @param vo 首页参数封装
+     * 跳轉到首頁
+     * @param vo 首頁參數封裝
      * @param modelMap
      * @return
      */
@@ -98,10 +98,10 @@ private UserRepository userRepository;
 //        log.info(vo.toString());
 //        User_me user1=  userRepository.findByUserName("admin");
 //        User_me user1=  userRepository.findByUserName("admin");
-       User_me user1=  userService.findByUsername("admin");
-    //     List<Category> categoryList=  categoryRepository.findByName("admin");
-    //     List<Reply> replies =  replyRepository.findAllByTopicid("1");
-    //     Page<Topic> topicRepositories =  topicRepository.findByAuthorId("1");
+        User_me user1=  userService.findByUsername("admin");
+        //     List<Category> categoryList=  categoryRepository.findByName("admin");
+        //     List<Reply> replies =  replyRepository.findAllByTopicid("1");
+        //     Page<Topic> topicRepositories =  topicRepository.findByAuthorId("1");
 //    curdTest.testInsert(sessionFactory);
 
 //       List<Reply> =replyService.findReplyByTopicId()
@@ -120,7 +120,7 @@ private UserRepository userRepository;
     }
 
     /**
-     * 注册页面
+     * 註冊頁面
      * @return
      */
 
@@ -132,7 +132,7 @@ private UserRepository userRepository;
 //
 //
 //    /**
-//     * 用户登录
+//     * 用戶登錄
 //     * @return
 //     */
 //    @RequestMapping(value="/register",method = RequestMethod.POST)
@@ -148,13 +148,13 @@ private UserRepository userRepository;
 //        String vcodeInSession = (String) session.getAttribute(VCODE_SESSION_KEY);
 //        String submitCode = registerUser.getValidateCode();
 //        if (!StringUtils.equals(vcodeInSession,submitCode)) {
-//            result.rejectValue("validateCode",null,"验证码错误!");
+//            result.rejectValue("validateCode",null,"驗證碼錯誤!");
 //        }
 //        if(null!=userService.findByUsername(registerUser.getUsername())){
-//            result.rejectValue("username",null,"该用户名已经存在");
+//            result.rejectValue("username",null,"該用戶名已經存在");
 //        }
 //        if(null!=userService.findUserByEmail(registerUser.getEmail())){
-//            result.rejectValue("email",null,"该邮箱已经被注册");
+//            result.rejectValue("email",null,"該郵箱已經被註冊");
 //        }
 //        if(result.hasErrors()){
 //            return "register";
@@ -162,10 +162,10 @@ private UserRepository userRepository;
 //
 //        User savedUser=userService.createUser(registerUser);
 //        if(null!=savedUser&&savedUser.getId()!=null){
-//            redirectAttributes.addFlashAttribute("messageSuc","注册成功！");
+//            redirectAttributes.addFlashAttribute("messageSuc","註冊成功！");
 //            return "redirect:/login";
 //        }else{
-//            model.addAttribute("messageErr","注册失败");
+//            model.addAttribute("messageErr","註冊失敗");
 //            model.addAttribute("vo",registerUser);
 //            return "register";
 //        }
@@ -173,7 +173,7 @@ private UserRepository userRepository;
 //
 //
     /**
-     * 登陆页面
+     * 登陸頁面
      * @return
      */
     @RequestMapping(value = "/login",method = RequestMethod.GET)
@@ -182,7 +182,7 @@ private UserRepository userRepository;
         return "login";
     }
     /**
-     * 用户登录
+     * 用戶登錄
      * @return
      */
 //    @RequestMapping(value="/login",method = RequestMethod.GET)
@@ -197,37 +197,37 @@ private UserRepository userRepository;
 //    @Autowired
 //     HttpSession session;
     @RequestMapping(value="/login",method = RequestMethod.POST)
-     public String doLogin(@Valid @ModelAttribute("loginForm") LoginUserVo user,
-                           HttpSession session,
-                           BindingResult result,
-                           ModelMap model,
-                           RedirectAttributes redirectAttributes){
+    public String doLogin(@Valid @ModelAttribute("loginForm") LoginUserVo user,
+                          HttpSession session,
+                          BindingResult result,
+                          ModelMap model,
+                          RedirectAttributes redirectAttributes){
 
         if(result.hasErrors()){
             return "login";
         }
-         //  return "login";
+        //  return "login";
 
         String vcodeInSession = (String) session.getAttribute(VCODE_SESSION_KEY);
         String submitCode = user.getValidateCode();
 
         if (!StringUtils.equals(vcodeInSession,submitCode)) {
-            result.rejectValue("validateCode",null,"验证码错误!");
+            result.rejectValue("validateCode",null,"驗證碼錯誤!");
             return "login";
         }
         if(!userService.isUserValid(user.getUsername(),user.getPassword())){
-            model.addAttribute("messageErr","用户名或者密码错误");
+            model.addAttribute("messageErr","用戶名或者密碼錯誤");
             return "login";
         }
 
-     session.setAttribute(CommonProps.LOGIN_USER_SESSION_KEY,userService.findUser(user.getUsername(),user.getPassword()));
+        session.setAttribute(CommonProps.LOGIN_USER_SESSION_KEY,userService.findUser(user.getUsername(),user.getPassword()));
         return "redirect:/";
     }
 
 
 
     /**
-     * 生成验证码
+     * 生成驗證碼
      * @param request
      * @param response
      * @throws IOException
@@ -244,7 +244,7 @@ private UserRepository userRepository;
 
 
     /**
-     * 退出系统
+     * 退出系統
      * @param session
      * @return
      * @throws Exception
@@ -256,14 +256,15 @@ private UserRepository userRepository;
     }
 
     /**
-     * 关于页面
+     * 關於頁面
      * @return
      */
     @RequestMapping(value = "/about")
     public String about() {
-       // return "about";
+        // return "about";
         return "/inc/pagination";
     }
 
 
 }
+

@@ -3,22 +3,22 @@
 <div class='container main'>
     <div class="col-md-9">
         <ul class='breadcrumb'>
-            <li><a href='${contextPath}/'>主页</a><span class='divider'></span></li>
-            <li class='active'>关于</li>
+            <li><a href='${contextPath}/'>主頁</a><span class='divider'></span></li>
+            <li class='active'>關於</li>
         </ul>
         <div class='panel'>
             <div class='inner'>
                 <div class="topic_content">
-                    <div class="markdown-text"><h3>关于Spring框架</h3>
-                        <p>Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson创建。简单来说，Spring是一个分层的JavaSE/EEfull-stack(一站式) 轻量级开源框架。</p>
-                        <p>轻量——从大小与开销两方面而言Spring都是轻量的。完整的Spring框架可以在一个大小只有1MB多的JAR文件里发布。并且Spring所需的处理开销也是微不足道的。此外，Spring是非侵入式的：典型地，Spring应用中的对象不依赖于Spring的特定类。</p>
-                        <p>控制反转——Spring通过一种称作控制反转（IoC）的技术促进了低耦合。当应用了IoC，一个对象依赖的其它对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。你可以认为IoC与JNDI相反——不是对象从容器中查找依赖，而是容器在对象初始化时不等对象请求就主动将依赖传递给它。</p>
-                        <p>面向切面——Spring提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务（例如审计（auditing）和事务（transaction）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。</p>
-                        <p>容器——Spring包含并管理应用对象的配置和生命周期，在这个意义上它是一种容器，你可以配置你的每个bean如何被创建——基于一个可配置原型（prototype），你的bean可以创建一个单独的实例或者每次需要时都生成一个新的实例——以及它们是如何相互关联的。然而，Spring不应该被混同于传统的重量级的EJB容器，它们经常是庞大与笨重的，难以使用。</p>
-                        <p>框架——Spring可以将简单的组件配置、组合成为复杂的应用。在Spring中，应用对象被声明式地组合，典型地是在一个XML文件里。Spring也提供了很多基础功能（事务管理、持久化框架集成等等），将应用逻辑的开发留给了你。</p>
+                    <div class="markdown-text"><h3>關於Spring框架</h3>
+                        <p>Spring是一個開源框架，Spring是於2003 年興起的一個羽量級的Java 開發框架，由Rod Johnson創建。簡單來說，Spring是一個分層的JavaSE/EEfull-stack(一站式) 羽量級開源框架。</p>
+                        <p>輕量——從大小與開銷兩方面而言Spring都是輕量的。完整的Spring框架可以在一個大小只有1MB多的JAR檔裡發佈。並且Spring所需的處理開銷也是微不足道的。此外，Spring是非侵入式的：典型地，Spring應用中的物件不依賴於Spring的特定類。</p>
+                        <p>控制反轉——Spring通過一種稱作控制反轉（IoC）的技術促進了低耦合。當應用了IoC，一個物件依賴的其它物件會通過被動的方式傳遞進來，而不是這個物件自己創建或者查找依賴物件。你可以認為IoC與JNDI相反——不是物件從容器中查找依賴，而是容器在物件初始化時不等物件請求就主動將依賴傳遞給它。</p>
+                        <p>面向切面——Spring提供了面向切面程式設計的豐富支援，允許通過分離應用的業務邏輯與系統級服務（例如審計（auditing）和事務（transaction）管理）進行內聚性的開發。應用物件只實現它們應該做的——完成業務邏輯——僅此而已。它們並不負責（甚至是意識）其它的系統級關注點，例如日誌或事務支援。</p>
+                        <p>容器——Spring包含並管理應用物件的配置和生命週期，在這個意義上它是一種容器，你可以配置你的每個bean如何被創建——基於一個可配置原型（prototype），你的bean可以創建一個單獨的實例或者每次需要時都生成一個新的實例——以及它們是如何相互關聯的。然而，Spring不應該被混同于傳統的重量級的EJB容器，它們經常是龐大與笨重的，難以使用。</p>
+                        <p>框架——Spring可以將簡單的元件配置、組合成為複雜的應用。在Spring中，應用物件被聲明式地組合，典型地是在一個XML檔裡。Spring也提供了很多基礎功能（事務管理、持久化框架組成等等），將應用邏輯的開發留給了你。</p>
 
                         <h3>MVC</h3>
-                        <p>MVC——Spring的作用是整合，但不仅仅限于整合，Spring 框架可以被看做是一个企业解决方案级别的框架。客户端发送请求，服务器控制器（由DispatcherServlet实现的)完成请求的转发，控制器调用一个用于映射的类HandlerMapping，该类用于将请求映射到对应的处理器来处理请求。HandlerMapping 将请求映射到对应的处理器Controller（相当于Action）在Spring 当中如果写一些处理器组件，一般实现Controller 接口，在Controller 中就可以调用一些Service 或DAO 来进行数据操作 ModelAndView 用于存放从DAO 中取出的数据，还可以存放响应视图的一些数据。 如果想将处理结果返回给用户，那么在Spring 框架中还提供一个视图组件ViewResolver，该组件根据Controller 返回的标示，找到对应的视图，将响应response 返回给用户。</p>
+                        <p>MVC——Spring的作用是整合，但不僅僅限於整合，Spring 框架可以被看做是一個企業解決方案級別的框架。用戶端發送請求，伺服器控制器（由DispatcherServlet實現的)完成請求的轉發，控制器調用一個用於映射的類HandlerMapping，該類用於將請求映射到對應的處理器來處理請求。HandlerMapping 將請求映射到對應的處理器Controller（相當於Action）在Spring 當中如果寫一些處理器元件，一般實現Controller 介面，在Controller 中就可以調用一些Service 或DAO 來進行資料操作 ModelAndView 用於存放從DAO 中取出的資料，還可以存放回應視圖的一些資料。 如果想將處理結果返回給用戶，那麼在Spring 框架中還提供一個視圖元件ViewResolver，該元件根據Controller 返回的標示，找到對應的視圖，將回應response 返回給用戶。</p>
                     </div>
                 </div>
             </div>
@@ -27,3 +27,4 @@
     <jsp:include page="inc/sidebar.jsp"></jsp:include>
 </div>
 <jsp:include page="inc/footer.jsp"></jsp:include>
+

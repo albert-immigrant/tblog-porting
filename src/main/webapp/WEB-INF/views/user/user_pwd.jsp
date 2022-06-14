@@ -11,14 +11,14 @@
         </div>
         <div class="col-md-9">
             <ul class="breadcrumb">
-                <li><a href="${contextPath}/"><i class="glyphicon glyphicon-home"></i> 首页</a></li>
-                <li class="active">修改密码</li>
+                <li><a href="${contextPath}/"><i class="glyphicon glyphicon-home"></i> 首頁</a></li>
+                <li class="active">修改密碼</li>
             </ul>
             <div class="wrapper">
                 <jsp:include page="../inc/msgbox.jsp"></jsp:include>
                 <form:form action="${contextPath}/user/changePwd" cssClass="form-horizontal" modelAttribute="changePwdForm" method="post">
                     <div class="form-group">
-                        <label for="oldPwd" class="col-md-2 control-label">当前密码</label>
+                        <label for="oldPwd" class="col-md-2 control-label">當前密碼</label>
                         <div class="col-lg-6">
                             <form:password path="oldPwd" cssClass="form-control" id="oldPwd"/>
                             <form:errors path="oldPwd" cssClass="error"/>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="newPwd" class="col-md-2 control-label">新密码</label>
+                        <label for="newPwd" class="col-md-2 control-label">新密碼</label>
                         <div class="col-lg-6">
                             <form:password path="newPwd" cssClass="form-control" id="newPwd"/>
                             <form:errors path="newPwd" cssClass="error"/>
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="repeatNewPwd" class="col-md-2 control-label">新密码确认</label>
+                        <label for="repeatNewPwd" class="col-md-2 control-label">新密碼確認</label>
                         <div class="col-lg-6">
                             <form:password path="repeatNewPwd" cssClass="form-control" id="repeatNewPwd"/>
                             <form:errors path="repeatNewPwd" cssClass="error"/>
@@ -45,7 +45,7 @@
                         <div class="col-lg-offset-2 col-lg-10">
                             <input type="hidden" name="uid" value="${loginUser.id}">
                             <input type="hidden" name="username" value="${loginUser.username}">
-                            <button type="submit" class="btn btn-primary">修改密码</button>
+                            <button type="submit" class="btn btn-primary">修改密碼</button>
                         </div>
                     </div>
                 </form:form>
@@ -56,3 +56,4 @@
     </div>
 </div>
 <jsp:include page="../inc/footer.jsp"></jsp:include>
+

@@ -24,7 +24,7 @@ package com.tangzq.controller;
 	
 
 	/**
-	 * 欄目控制器
+	 * 分類控制器
 	 * @author tangzhiqiang
 	 */
 	@Controller
@@ -39,7 +39,7 @@ package com.tangzq.controller;
 	
 
 	    /**
-	     * 欄目列表
+	     * 分類列表
 	     * @param model
 	     * @return
 	     */
@@ -54,7 +54,7 @@ package com.tangzq.controller;
 	
 
 	    /**
-	     * 新增欄目表單
+	     * 新增分類表單
 	     * @return
 	     */
 	    @RequestMapping(value="/create",method = RequestMethod.GET)
@@ -64,7 +64,7 @@ package com.tangzq.controller;
 	
 
 	    /**
-	     * 新增欄目
+	     * 新增分類
 	     * @param cat
 	     * @param model
 	     * @param redirectAttributes
@@ -77,7 +77,7 @@ package com.tangzq.controller;
 	        /*
 	
 	        if(null==cat||StringUtils.isEmpty(cat.getCatName())||StringUtils.isEmpty(cat.getcatdir())){
-	            model.addAttribute("messageErr","欄目名稱和目錄名不能為空");
+	            model.addAttribute("messageErr","分類名稱和目錄名不能為空");
 	            model.addAttribute("cat",cat);
 	            return "category/cat_add";
 	        }
@@ -101,10 +101,10 @@ package com.tangzq.controller;
 
 	        Category savedCat=categoryService.addCategory(cat);
 	        if(null!=savedCat&&savedCat.getId()!=null){
-	            redirectAttributes.addFlashAttribute("messageSuc","創建欄目成功");
+	            redirectAttributes.addFlashAttribute("messageSuc","創建分類成功");
 	            return "redirect:/cat/list";
 	        }else{
-	            redirectAttributes.addFlashAttribute("messageErr","欄目創建失敗");
+	            redirectAttributes.addFlashAttribute("messageErr","分類創建失敗");
 	            model.addAttribute("cat",cat);
 	            return "category/cat_add";
 	        }
@@ -114,7 +114,7 @@ package com.tangzq.controller;
 	
 
 	    /**
-	     * 修改欄目表單
+	     * 修改分類表單
 	     * @param catID
 	     * @param model
 	     * @return
@@ -129,7 +129,7 @@ package com.tangzq.controller;
 	
 
 	    /**
-	     * 修改欄目
+	     * 修改分類
 	     * @param cat
 	     * @param model
 	     * @param redirectAttributes
@@ -140,7 +140,7 @@ package com.tangzq.controller;
 	                                 ModelMap model,
 	                                 RedirectAttributes redirectAttributes){
 	        if(null==cat||StringUtils.isEmpty(cat.getName())||StringUtils.isEmpty(cat.getcatdir())){
-	            model.addAttribute("messageErr","欄目名稱和目錄名不能為空");
+	            model.addAttribute("messageErr","分類名稱和目錄名不能為空");
 	            model.addAttribute("cat",cat);
 	            return "category/cat_edit";
 	        }
@@ -155,10 +155,10 @@ package com.tangzq.controller;
 
 	        Category savedCat=categoryService.updateById(cat,catID);
 	        if(null!=savedCat&&savedCat.getId()!=null){
-	            redirectAttributes.addFlashAttribute("messageSuc","更新欄目成功");
+	            redirectAttributes.addFlashAttribute("messageSuc","更新分類成功");
 	            return "redirect:/cat/list";
 	        }else{
-	            redirectAttributes.addFlashAttribute("messageErr","欄目更新失敗");
+	            redirectAttributes.addFlashAttribute("messageErr","分類更新失敗");
 	            model.addAttribute("cat",cat);
 	            return "category/cat_edit";
 	        }

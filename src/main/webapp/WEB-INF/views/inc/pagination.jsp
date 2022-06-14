@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav aria-label="Page navigation">
     <ul class="pagination">
-        <!--在这里统一定义分页全局属性-->
+        <!--在這裡統一定義分頁全域屬性-->
         <c:set var="currentPage" value="${pager.number+1}"/>
         <c:set var="totalPages" value="${pager.totalPages}"/>
         <c:set var="pageStart" value="${currentPage - 2 > 0 ? currentPage - 2 : 1}"/>
@@ -48,7 +48,8 @@
             </li>
         </c:if>
         <li>
-            <span>当前第${currentPage}页,共${totalPages}页</span>
+            <span>當前第${currentPage}頁,共${totalPages}頁</span>
         </li>
     </ul>
 </nav>
+

@@ -7,16 +7,17 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * 评论操作类
+ * 評論操作類
  * @author tangzhiqiang
  */
 @Repository
 public interface ReplyRepository extends PagingAndSortingRepository<Reply,String> {
 
     /**
-     * 查找文章的所有评论
+     * 查找文章的所有評論
      * @param topicId
      * @return
      */
     List<Reply> findAllByTopicid(String topicId);
 }
+

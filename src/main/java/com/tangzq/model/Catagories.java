@@ -1,13 +1,11 @@
 package com.tangzq.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Objects;
-
+@Entity()
+@Table(name = "categories")
 public class Catagories {
     private int id;
     private String catDir;

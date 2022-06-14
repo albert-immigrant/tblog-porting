@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * 用户控制器
+ * 用戶控制器
  * @author tangzhiqiang
  */
 @Controller
@@ -32,7 +32,7 @@ public class PublicController {
 //    private TopicService topicService;
 
     /**
-     * 用户详情页
+     * 用戶詳情頁
      * @param userId
      * @return
      */
@@ -58,3 +58,4 @@ public class PublicController {
     }
 
 }
+

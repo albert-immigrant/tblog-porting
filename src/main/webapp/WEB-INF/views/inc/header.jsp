@@ -7,7 +7,7 @@
 <head>
     <!-- meta -->
     <meta charset="utf-8"/>
-    <meta name='description' content='TBlog社区'>
+    <meta name='description' content='TBlog社區'>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="keywords" content="nodejs, node, express, connect, socket.io"/>
     <meta name="referrer" content="always">
@@ -22,8 +22,9 @@
         <title>${param.title}</title>
     </c:if>
     <c:if test="${empty param.title}">
-        <title>TBlo社区</title>
+        <title>TBlo社區</title>
     </c:if>
 </head>
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
+

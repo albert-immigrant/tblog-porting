@@ -4,16 +4,16 @@
 <div class='container main'>
     <div class='col-md-9'>
         <ul class='breadcrumb'>
-            <li><a href='${contextPath}/'>主页</a><span class='divider'></span></li>
-            <li class='active'>${user.username}主页</li>
+            <li><a href='${contextPath}/'>主頁</a><span class='divider'></span></li>
+            <li class='active'>${user.username}主頁</li>
         </ul>
         <div class="panel">
             <div class="inner user-info-block">
-<%--                <c:if test="${user.avatarURLByUploaded}">--%>
+                <%--                <c:if test="${user.avatarURLByUploaded}">--%>
                 <c:if test="${user.avatarurluploaded}">
                     <div class="avatar" style='background-image: url("${contextPath}/upload/getImage/${user.avatarURL}");background-size:cover;'></div>
                 </c:if>
-<%--                <c:if test="${!user.avatarURLByUploaded}">--%>
+                <%--                <c:if test="${!user.avatarURLByUploaded}">--%>
                 <c:if test="${!user.avatarurluploaded}">
                     <div class="avatar" style='background-image: url("${user.avatarURL}");background-size:cover;'></div>
                 </c:if>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="action-box">
                     <div class="link-box link-box"></div>
-                    <button class="follow-btn btn">关注</button>
+                    <button class="follow-btn btn">關注</button>
                 </div>
             </div>
         </div>
@@ -74,16 +74,16 @@
                             </c:forEach>
                         </ul>
                     </div>
-                    <!--分页开始-->
+                    <!--分頁開始-->
                     <jsp:include page="../inc/pagination.jsp">
                         <jsp:param name="pager" value="${pager}"/>
                         <jsp:param name="baseURL" value="${contextPath}/pub/user/${user.id}"/>
                         <jsp:param name="otherParams" value="&tab=${tab}"/>
                     </jsp:include>
-                    <!--分页结束-->
+                    <!--分頁結束-->
                 </c:if>
                 <c:if test="${empty pager.content}">
-                    <p class="text-center">没有搜索结果</p>
+                    <p class="text-center">沒有搜索結果</p>
                 </c:if>
             </div>
         </div>
@@ -91,3 +91,4 @@
     <jsp:include page="../inc/sidebar.jsp"></jsp:include>
 </div>
 <jsp:include page="../inc/footer.jsp"></jsp:include>
+

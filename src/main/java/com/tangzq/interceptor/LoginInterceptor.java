@@ -17,7 +17,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     private final Logger log = LoggerFactory.getLogger(LoginInterceptor.class);
 
     /**
-     * 拦截所有请求，并验证是否登陆
+     * 攔截所有請求，並驗證是否登陸
      * @param request
      * @param response
      * @param handler
@@ -31,7 +31,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 /*
         User user =  (User) request.getSession().getAttribute(CommonProps.LOGIN_USER_SESSION_KEY);
         if(user == null){
-            log.info("用户没有登陆：将跳转到login页面！");
+            log.info("用戶沒有登陸：將跳轉到login頁面！");
             response.sendRedirect(request.getContextPath()+"/login");
             return false;
         }
@@ -53,3 +53,4 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     }
 
 }
+

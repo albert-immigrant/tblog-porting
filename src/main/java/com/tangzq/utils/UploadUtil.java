@@ -24,10 +24,10 @@ public class UploadUtil {
 	public static final String UPLOAD_AVATAR_FOLDER=UPLOAD_FOLDER+"/avatar";
 
 	/**
-	 * 创建文件，如果文件夹不存在将被创建
-	 * 
+	 * 創建檔，如果資料夾不存在將被創建
+	 *
 	 * @param destFileName
-	 *            文件路径
+	 *            檔路徑
 	 */
 	public static File createFile(String destFileName) {
 		File file = new File(destFileName);
@@ -67,47 +67,47 @@ public class UploadUtil {
 	}
 
 	/**
-	 * 保存图片通过url
-	 * 
+	 * 保存圖片通過url
+	 *
 	 * @param urlString
 	 * @param filename
 	 * @throws Exception
 	 */
 	public static void saveImgFromURL(String urlString, String filename) throws Exception {
 		createFile(filename);
-		// 构造URL
+		// 構造URL
 		URL url = new URL(urlString);
-		// 打开连接
+		// 打開連接
 		URLConnection con = url.openConnection();
-		// 输入流
+		// 輸入流
 		InputStream is = con.getInputStream();
-		// 1K的数据缓冲
+		// 1K的資料緩衝
 		byte[] bs = new byte[1024];
-		// 读取到的数据长度
+		// 讀取到的數據長度
 		int len;
-		// 输出的文件流
+		// 輸出的檔流
 		OutputStream os = new FileOutputStream(filename);
-		// 开始读取
+		// 開始讀取
 		while ((len = is.read(bs)) != -1) {
 			os.write(bs, 0, len);
 		}
-		// 完毕，关闭所有链接
+		// 完畢，關閉所有連結
 		os.close();
 		is.close();
 	}
 
 	/**
-	 * 切割图片
-	 * 
+	 * 切割圖片
+	 *
 	 * @param input
 	 * @param result
-	 *            目标路径
+	 *            目標路徑
 	 * @param x
 	 * @param y
 	 * @param w
-	 *            目标宽度
+	 *            目標寬度
 	 * @param h
-	 *            目标高
+	 *            目標高
 	 * @param isPNG
 	 *            是否生成.png
 	 * @throws Exception
@@ -150,7 +150,7 @@ public class UploadUtil {
 
 
 	/**
-	 * 规范文件名
+	 * 規範檔案名
 	 * @param originalFilename
 	 * @return
 	 */
@@ -159,11 +159,11 @@ public class UploadUtil {
 	}
 
 	/**
-	 * 上图文件
-	 * @param rootPath 应用跟路劲
-	 * @param relativePath 相对路劲
+	 * 上圖文件
+	 * @param rootPath 應用跟路徑
+	 * @param relativePath 相對路徑
 	 * @param in  文件流
-	 * @return 全路径
+	 * @return 全路徑
 	 * @throws IOException
 	 */
 	public static String uploadImage(String rootPath, String relativePath,InputStream in) throws IOException{
@@ -175,3 +175,4 @@ public class UploadUtil {
 	}
 
 }
+

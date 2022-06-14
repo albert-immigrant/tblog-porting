@@ -8,42 +8,43 @@ import org.springframework.stereotype.Repository;
 
 
 /**
- * User文档操作类
+ * User文檔操作類
  * @author tangzhiqiang
  */
 @Repository
 public interface UserRepository extends CrudRepository<User_me, String> {
 
     /**
-     * 用户名查找用户
+     * 用戶名查找用戶
      *
      * @param username
      * @return
      */
- @Query( "SELECT u FROM User_me u WHERE u.username=?1")
+    @Query( "SELECT u FROM User_me u WHERE u.username=?1")
 //    User findByUsername(String username);
     User_me findByUserName(String userName);
 
 
 
     /**
-     * 邮件查找用户
+     * 郵件查找用戶
      *
      * @param email
      * @return
      */
-  //  User_me findByEmail(String email);
+    //  User_me findByEmail(String email);
 
     /**
-     * 用户名就、密码查找
+     * 用戶名就、密碼查找
      *
      * @param username
      * @param password
      * @return
      */
     @Query("select u from User_me u  where u.username=?1 and u.password=?2")
-   User_me findByUsernameAndPassword(String username, String password);
+    User_me findByUsernameAndPassword(String username, String password);
 
     @Query("select  u from User_me u where u.id=?1")
     User_me findById(int id);
 }
+

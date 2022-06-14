@@ -10,7 +10,7 @@ public interface UserService {
 
 
     /**
-     * 创建用户
+     * 創建用戶
      * @param vo
      * @return
      */
@@ -18,14 +18,14 @@ public interface UserService {
 
 
     /**
-     * 获取用户
+     * 獲取用戶
      * @param uid
      * @return
      */
     User_me getUser(int uid);
 
     /**
-     * 根据用户名和密码查找用户
+     * 根據用戶名和密碼查找使用者
      * @param username
      * @param password
      * @return
@@ -33,7 +33,7 @@ public interface UserService {
     User_me findUser(String username, String password);
 
     /**
-     * 判断用户是否有效
+     * 判斷用戶是否有效
      * @param username
      * @param password
      * @return
@@ -42,21 +42,21 @@ public interface UserService {
 
 
     /**
-     * 使用用户名查找用户
+     * 使用用戶名查找用戶
      * @param username
      * @return
      */
     User_me findByUsername(String username);
 
     /**
-     * 使用邮箱查找用户
+     * 使用郵箱查找用戶
      * @param email
      * @return
      */
-  //  User_me findUserByEmail(String email);
+    //  User_me findUserByEmail(String email);
 
     /**
-     * 更新用户信息
+     * 更新使用者資訊
      * @param user
      * @return
      */
@@ -64,7 +64,7 @@ public interface UserService {
 
 
     /**
-     * 修改用户密码
+     * 修改使用者密碼
      * @param userId
      * @param newPwd
      * @return
@@ -73,13 +73,14 @@ public interface UserService {
     User_me updatePwd(int userId, String newPwd);
 
     /**
-     * 更新头像
+     * 更新頭像
      * @param userId
      * @param avatarURL
-     * @param isUploaded 是否通过上传更新的头像图片
+     * @param isUploaded 是否通過上傳更新的頭像圖片
      * @return
      */
 //    User_me updateAvatar(String userId, String avatarURL, boolean isUploaded);
     User_me updateAvatar(int userId, String avatarURL, boolean isUploaded);
 
 }
+

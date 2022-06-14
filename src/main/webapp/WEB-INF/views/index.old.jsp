@@ -41,7 +41,7 @@
                                                 <div class="meta-row">
                                                     <ul class="meta-list">
                                                         <c:if test="${'all'==indexVo.tab and topic.top}">
-                                                            <li class="item recommended">置顶</li>
+                                                            <li class="item recommended">置頂</li>
                                                         </c:if>
                                                         <li class="item username">
                                                             <a href="${contextPath}/pub/user/${topic.authorId}">${topic.authorName}</a>.${topic.friendlyTime}
@@ -58,7 +58,7 @@
                                                                 </c:forEach>
                                                             </li>
                                                         </c:if>
-                                                        <li class="item">${topic.visitCount}次阅读</li>
+                                                        <li class="item">${topic.visitCount}次閱讀</li>
                                                     </ul>
                                                 </div>
                                                 <div class="title-row">
@@ -73,7 +73,7 @@
                                                         </a>
                                                         <a class="action comment" href="${contextPath}/article/${topic.id}#comment" >
                                                             <span class="icon"></span>
-                                                            <span class="title">${topic.replyCount}评论</span>
+                                                            <span class="title">${topic.replyCount}評論</span>
                                                         </a>
                                                         <a  class="action collect hover" href="javascript:;">
                                                             <span class="icon"></span>
@@ -95,16 +95,16 @@
                             </li>
                         </c:forEach>
                     </ul>
-                    <!--分页开始-->
+                    <!--分頁開始-->
                     <jsp:include page="inc/pagination.jsp">
                         <jsp:param name="pager" value="${pager}"/>
                         <jsp:param name="baseURL" value="${contextPath}/"/>
                         <jsp:param name="otherParams" value="tab=${indexVo.tab}"/>
                     </jsp:include>
-                    <!--分页结束-->
+                    <!--分頁結束-->
                 </c:if>
                 <c:if test="${empty pager.content}">
-                    <p class="text-center">还没有帖子</p>
+                    <p class="text-center">還沒有文章</p>
                 </c:if>
             </div>
         </div>
@@ -112,3 +112,4 @@
     <jsp:include page="inc/sidebar.jsp"></jsp:include>
 </div>
 <jsp:include page="inc/footer.jsp"></jsp:include>
+

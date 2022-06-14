@@ -2,22 +2,22 @@
 <div class='col-md-3'>
     <div class='panel'>
         <div class='header'>
-            <span class='col_fade'>关于</span>
+            <span class='col_fade'>關於</span>
         </div>
         <div class='inner'>
-            <p>TBlog：tblog开源博客</p>
+            <p>TBlog：tblog開源博客</p>
 
-            <p>在这里你可以：</p>
+            <p>在這裡你可以：</p>
             <ul>
-                <li>提出由建设性的建议</li>
-                <li>随意修改代码，修改成您需要的风格</li>
-                <li>分享给您的朋友</li>
+                <li>提出由建設性的建議</li>
+                <li>隨意修改代碼，修改成您需要的風格</li>
+                <li>分享給您的朋友</li>
             </ul>
         </div>
     </div>
     <div class='panel'>
         <div class='header'>
-            <span class='col_fade'>广告</span>
+            <span class='col_fade'>廣告</span>
         </div>
         <div class="inner ads">
             <a href="javascript:;" target="_blank" class="banner">
@@ -27,7 +27,7 @@
     </div>
     <div class='panel'>
         <div class='header'>
-            <span class='col_fade'>推荐社区</span>
+            <span class='col_fade'>推薦社區</span>
         </div>
         <div class='inner'>
             <ol class="friendship-community">
@@ -42,3 +42,4 @@
         </div>
     </div>
 </div>
+

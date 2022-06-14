@@ -21,22 +21,22 @@
     </div>
     <div class="navbar-collapse collapse pull-right">
         <ul class="nav navbar-nav">
-            <li><a href="${contextPath}/">首页</a></li>
-            <li><a href="${contextPath}/about">关于</a></li>
+            <li><a href="${contextPath}/">首頁</a></li>
+            <li><a href="${contextPath}/about">關於</a></li>
             <c:if test="${empty loginUser}">
-                <li><a href="${contextPath}/register">注册</a></li>
-                <li><a href="${contextPath}/login">登陆</a></li>
+                <li><a href="${contextPath}/register">註冊</a></li>
+                <li><a href="${contextPath}/login">登陸</a></li>
             </c:if>
             <c:if test="${not empty loginUser}">
                 <c:if test="${loginUser.username=='admin'}">
-                 <li><a href="${contextPath}/cat/list">栏目管理</a></li>
+                    <li><a href="${contextPath}/cat/list">分類管理</a></li>
                 </c:if>
-                <li><a href="${contextPath}/topic/list">帖子管理</a></li>
+                <li><a href="${contextPath}/topic/list">文章管理</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">${loginUser.username}<b class="caret"></b></a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="${contextPath}/user/info/${loginUser.username}"><i class="glyphicon glyphicon-user"></i> 用户中心</a></li>
-                        <li><a href="${contextPath}/user/changePwd"><i class="glyphicon glyphicon-edit"></i> 修改密码</a></li>
+                        <li><a href="${contextPath}/user/info/${loginUser.username}"><i class="glyphicon glyphicon-user"></i> 用戶中心</a></li>
+                        <li><a href="${contextPath}/user/changePwd"><i class="glyphicon glyphicon-edit"></i> 修改密碼</a></li>
                         <li class="divider"></li>
                         <li><a href="${contextPath}/logout"><i class="glyphicon glyphicon-off"></i>退出</a></li>
                     </ul>
@@ -45,3 +45,4 @@
         </ul>
     </div>
 </div>
+

@@ -12,7 +12,7 @@
     <uri>http://java.sun.com/jsp/jstl/functionss</uri>
 
     <function>
-        <description>获取Git信息</description>
+        <description>獲取Git資訊</description>
         <name>getConfig</name>
         <function-class>com.tangzq.common.ConfigTools</function-class>
         <function-signature>java.lang.String getConfig(java.lang.String)</function-signature>
@@ -20,3 +20,4 @@
     </function>
 
 </taglib>
+

@@ -21,7 +21,7 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 帖子控制器
+ * 文章控制器
  * @author tangzhiqiang
  */
 @Controller
@@ -37,7 +37,7 @@ public class TopicController {
 
 
     /**
-     * 帖子列表
+     * 文章列表
      * @param model
      * @return
      */
@@ -55,7 +55,7 @@ public class TopicController {
     }
 
     /**
-     * 新增帖子表单
+     * 新增文章表單
      * @return
      */
     @RequestMapping(value="/create",method = RequestMethod.GET)
@@ -66,7 +66,7 @@ public class TopicController {
 
 
     /**
-     * 新增帖子
+     * 新增文章
      * @param vo
      * @param model
      * @param redirectAttributes
@@ -74,12 +74,12 @@ public class TopicController {
      */
     @RequestMapping(value = "/create",method = RequestMethod.POST)
     public String doCreateTopic(TopicVo vo,
-                                   ModelMap model,
-                                   RedirectAttributes redirectAttributes){
+                                ModelMap model,
+                                RedirectAttributes redirectAttributes){
         if(null==vo|| StringUtils.isEmpty(vo.getCatId())
                 ||StringUtils.isEmpty(vo.getTitle())
                 ||StringUtils.isEmpty(vo.getContentMD())){
-            model.addAttribute("messageErr","帖子栏目，标题，内容不能为空");
+            model.addAttribute("messageErr","文章欄目，標題，內容不能為空");
             model.addAttribute("catList",categoryService.findAll());
             model.addAttribute("topicVo",vo);
             return "topic/topic_add";
@@ -87,20 +87,20 @@ public class TopicController {
 
         Topic savedTopic=topicService.addTopic(vo);
         if(null!=savedTopic&&Integer.toString( savedTopic.getId())!=null){
-            redirectAttributes.addFlashAttribute("messageSuc","帖子创建成功");
+            redirectAttributes.addFlashAttribute("messageSuc","文章創建成功");
             return "redirect:/topic/list";
         }else{
-            redirectAttributes.addFlashAttribute("messageErr","帖子创建失败");
+            redirectAttributes.addFlashAttribute("messageErr","文章創建失敗");
             model.addAttribute("catList",categoryService.findAll());
             model.addAttribute("topicVo",vo);
             return "topic/topic_add";
         }
-        
+
     }
 
 
     /**
-     * 修改帖子表单
+     * 修改文章表單
      * @param topicID
      * @param model
      * @return
@@ -114,7 +114,7 @@ public class TopicController {
 
 
     /**
-     * 修改帖子
+     * 修改文章
      * @param vo
      * @param model
      * @param redirectAttributes
@@ -128,17 +128,17 @@ public class TopicController {
         if(null==vo|| StringUtils.isEmpty(vo.getCatId())
                 ||StringUtils.isEmpty(vo.getTitle())
                 ||StringUtils.isEmpty(vo.getContentMD())){
-            model.addAttribute("messageErr","帖子栏目，标题，内容不能为空");
+            model.addAttribute("messageErr","文章欄目，標題，內容不能為空");
             model.addAttribute("topicVo",vo);
             return "topic/topic_edit";
         }
 
         Topic savedTopic=topicService.updateById(vo,topicID);
         if(null!=savedTopic&&Integer.toString( savedTopic.getId())!=null){
-            redirectAttributes.addFlashAttribute("messageSuc","帖子更新成功");
+            redirectAttributes.addFlashAttribute("messageSuc","文章更新成功");
             return "redirect:/topic/edit/"+savedTopic.getId();
         }else{
-            redirectAttributes.addFlashAttribute("messageErr","帖子更新失败");
+            redirectAttributes.addFlashAttribute("messageErr","文章更新失敗");
             model.addAttribute("topicVo",vo);
             return "topic/topic_edit";
         }
@@ -147,15 +147,16 @@ public class TopicController {
 
 
     /**
-     * 删除帖子
+     * 刪除文章
      * @param topicID
      * @return
      */
     @RequestMapping(value="/del/{topicID}",method = RequestMethod.GET)
     public String delTopic(@PathVariable("topicID") String topicID, RedirectAttributes redirectAttributes){
         topicService.deleteById(topicID);
-        redirectAttributes.addFlashAttribute("messageSuc","帖子删除成功");
+        redirectAttributes.addFlashAttribute("messageSuc","文章刪除成功");
         return "redirect:/topic/list";
     }
 
 }
+
