@@ -90,7 +90,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
-            <!-- 编译时依赖 -->
+            <!-- 編譯時依賴 -->
             <scope>provided</scope>
         </dependency>
 
@@ -118,7 +118,7 @@
             <artifactId>rome</artifactId>
             <version>1.9.0</version>
         </dependency>
-        <!--		for Database-->
+        <!--      for Database-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -172,7 +172,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <dependencies>
-                    <!--该插件要求启动时使用mvn命令行启动，示例：mvn spring-boot:run -->
+                    <!--該外掛程式要求啟動時使用mvn命令列啟動，示例：mvn spring-boot:run -->
                     <dependency>
                         <groupId>org.springframework</groupId>
                         <artifactId>springloaded</artifactId>
@@ -181,14 +181,14 @@
                 </dependencies>
             </plugin>
 
-            <!--			打包源代碼-->
+            <!--         打包源代碼-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>3.2.0</version>
             </plugin>
-            <!--获取Git信息插件，该插件会自动生成一个存放git信息的properties文件-->
+            <!--獲取Git資訊外掛程式，該外掛程式會自動生成一個存放git資訊的properties檔-->
             <!--
                         <plugin>
                             <groupId>pl.project13.maven</groupId>
@@ -234,3 +234,4 @@
     </repositories>
 
 </project>
+
